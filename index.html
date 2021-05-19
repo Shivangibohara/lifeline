@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,19 +8,202 @@
     <title>Document</title>
 </head>
 <style>
-    body{
+    /* body{
         text-align: center;
         background-color: darkgray;
         font-weight: bold;
         font-size: xx-large;
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+       
+    } */
+    
+
+
+    /* .split right; {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+} */
+
+    .bi {
+
+        background-size: cover;
+        overflow: hidden;
+        position: relative;
+        z-index: 0;
     }
-    .button{
+
+    /* CSS Reset */
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    /* CSS Variables */
+    :root {
+        --navbar-height: 59px;
+    }
+
+    /* Navigation Bar */
+    #navbar {
+        display: flex;
+        align-items: center;
+        position: sticky;
+        top: 0px;
+    }
+
+    #navbar::before {
+        content: "";
+        background-color: black;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        opacity: 0.7;
+    }
+
+    /* Navigation Bar: Logo and Image */
+
+
+
+
+
+    /* Navigation Bar: List Styling */
+
+    #navbar ul {
+        display: flex;
+        font-family: 'Baloo Bhai', cursive;
+    }
+
+    #navbar ul li {
+        list-style: none;
+        font-size: 1.3rem;
+    }
+
+    #navbar ul li a {
+        color: white;
+        display: block;
+        padding: 3px 22px;
+        border-radius: 20px;
+        text-decoration: none;
+    }
+
+    #navbar ul li a:hover {
+        color: black;
+        background-color: white;
+    }
+
+    #home {
+        display: flex;
+        flex-direction: column;
+        padding: 3px 200px;
+        height: 550px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #home::before {
+        content: "";
+        position: absolute;
+        background: url(virus-4937609_1280.jpg) no-repeat center center/cover;
+        height: 642px;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        z-index: -1;
+        opacity: 0.89;
+    }
+
+    #home h1 {
+        color: black;
+        text-shadow: 1px 1px 2px black, 0 0 25px red, 0 0 5px darkred;
+        text-align: center;
+        font-family: 'Bree Serif', serif;
+        font-size: 100px;
+
+
+    }
+
+    #home p {
+        color: white;
+        text-shadow: 1px 1px 2px black, 0 0 25px red, 0 0 5px darkred;
+        text-align: center;
+        font-size: 2.5rem;
+        font-family: 'Bree Serif', serif;
+    }
+
+
+    /* form Section */
+    #form {
+        margin: 34px;
+        display: flex;
+    }
+
+    #box2 {
+        border: 2px solid brown;
+        padding: 34px;
+        margin: 2px 55px;
+        margin-left: 100px;
+        border-radius: 28px;
+        background: #f2f2f2;
+        margin-bottom: 20px;
+    }
+    #box1{
+        border: 2px solid brown;
+        
+        margin: 2px 55px;
+        margin-left: 100px;
+        border-radius: 28px;
+        background: #f2f2f2;
+        margin-bottom: 20px;
+        padding-left: 70px;
+        padding-right: 70px;
+        padding-top: 34px;
+        padding-bottom: 20px;
+    }
+
+    #form .box img {
+        height: 160px;
+        margin: auto;
+        display: block;
+    }
+    #i2{
+        width: 200px;
+        height: 170px;
+
+    }
+
+    #form .box p {
+        font-family: 'Bree Serif', serif;
+
+    }
+
+    .h1 {
+        margin-left: 550px;
+        color: light blue;
+        text-shadow:1px 1px 2px blue, 0 0 25px lightblue, 0 0 5px darkblue ;
+    }
+    #form-container{
+        background-color: rgb(233, 219, 219);
+    }
+
+    #button2 {
         border-style: solid;
         background-color: whitesmoke;
         border-color: black;
         font-weight: bold;
-        color: red;
+        color:red;
         padding: 15px 32px;
         text-align: center;
         text-decoration: none;
@@ -28,20 +212,274 @@
         margin: 4px 2px;
         cursor: pointer;
     }
+
+    #button1 {
+        border-style: solid;
+        background-color: whitesmoke;
+        border-color: black;
+        font-weight: bold;
+        color:red;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: x-large;
+         margin-top: 25px ;
+        cursor: pointer;
+        margin-right: 1px;
+        margin-left: 40px;
+    }
+
+    /* Contact Section */
+#contact{
+    position: relative;
+}
+#contact::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.7;
+    background: url('../contact.jpg') no-repeat center center/cover;
+
+}
+#contact-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 34px;
+}
+#contact-box input, 
+#contact-box textarea{
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 9px;
+    font-size: 1.1rem;
+} 
+
+#contact-box form{
+    width: 40%;
+}
+
+#contact-box label{
+   font-size: 1.3rem;
+   font-family: 'Bree Serif', serif;
+
+}
+.contactdetails{
+    text-align: center;
+    font-style: bold;
+}
+.contact-us{
+    margin-left: 510px;
+}
+
+#tracker-section{
+    background-color:black;
+}
+
+
+
 </style>
+
 <body>
-    <p>
+    <!-- navigation bar -->
+    <nav id="navbar">
+
+        <ul>
+            <li class="item"><a href="#home">Home</a></li>
+            <li class="item"><a href="#form-container">Forms</a></li>
+            <li class="item"><a href="#tracker-section">Covid Details</a></li>
+            <li class="item"><a href="#contact">Contact us</a></li>
+        </ul>
+    </nav>
+    <section id="home">
+        <h1 class="h-primary">LIFELINE</h1>
+        <p> our site helps hospital to fulfil their requirement of oxygen as fast as possible </p>
+        <p>By arranging cylinders from nearest oxygen cylinder dealers </p>
+
+    </section>
+    <section id="form-container">
+        <h1 class="h1">FORM TO FILL</h1>
+        <div id="form">
+
+            <div class="box" id="box1">
+                <img id="i1" src="hospital.webp" alt="">
+
+                <p class="center">
+                <h2 class="h2">LOGIN FOR HOSPITALS</h2>
+                <form action="form.html" method="POST" target="_blank">
+                    <button type="submit" class="button1" id="button1">HOSPITALS</button>
+                </form>
+                </p>
+            </div>
+            <div class="box" id="box2">
+                <img id="i2" src="samuel-ramos-KDd7jJ3TeiA-unsplash.jpg" alt="">
+
+                <p class="center">
+                <h2 class="h2">LOGIN FOR OXYGEN CYLINDER</h2>
+                <form action="form1.html" method="POST" target="_blank">
+                    <button type="submit" class="button2" id="button2">OXYGEN CYLINDER DEALERS</button>
+                </form>
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="tracker" id="tracker-section">
+    <iframe src="https://public.domo.com/cards/dJ45D" width="100%" height="600" marginheight="0" marginwidth="0" frameborder="0"></iframe>
+
+    <!-- <section id="tracker-section">
+        <!doctype html>
+       <html lang="en">
+       <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+       <meta http-equiv=“Pragma” content=”no-cache”>
+       <meta http-equiv=“Expires” content=”-1″>
+       <meta http-equiv=“CACHE-CONTROL” content=”NO-CACHE”>
+       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+       <link rel="stylesheet" href="tracker_style.css">
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+       <title>covid tracker</section></title>
+       </head>
+       <body>
+         
+       <h1 class='section-heading'>COVID TRACKER</h1>
+       <h2 class='section-subheading'>SEARCH COUNTRY NAME</h2>
+       <div class="section-description">
+         <p class="section-subheading">
+           <form id="query-form">
+             <div>
+               <label for="ingredients"> 
+                 <div class="country">Country :</div></label><input class="textfield" id="ingredients" type="text" name="ingredients" placeholder="e.g.INDIA" onChange="sanitizeInputs()" />
+             </div>
+             
+             <div class="button">
+               <br />
+               <input class="button" type="button" value="Reset" id="resetButton" onClick="this.form.reset();resetResults()" />
+               <input class="button" type="submit" value="Search ..." id="searchButton" />
+             </div>
+           </form>
+         </p>
+       
+       <div class="section-subheading" id="search-results-heading"></div>
+       <div class="results-div" id="results"></div>
+       </body>
+       
+       <!-- JQuery Scripts -->
+       <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+       <!-- Our codes -->
+       <!-- <script src="tracker_app.js"></script>
+       
+       </html> -->
+        </section> 
+       
+
+
+    <section id="contact">
+        <h1 class="contact-us">Contact Us</h1>
+        <div id="contact-box">
+            <form action="">
+                <div class="form-group">
+                    <label for="name">Name: </label>
+                    <input type="text" name="name" id="name" placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email: </label>
+                    <input type="email" name="name" id="email" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number: </label>
+                    <input type="phone" name="name" id="phone" placeholder="Enter your phone">
+                </div>
+                <div class="form-group">
+                    <label for="suggestion">Suggestion: </label>
+                    <textarea name="suggestion" id="suggestion" cols="30" rows="10"></textarea>
+                </div>
+                <div class="contactdetails">
+                    <h1 class="ocd">OUR CONTACT DETAILS</h1>
+                    <P class="phoneno">
+                        999999999999<br><br>
+                        888888888888
+                    </P>
+                </div>
+
+            </form>
+        </div>
+    </section>
+
+
+    <!-- <p>
+        
+        <div class="split left">
+
         Login for hospitals
         <form action="form.html" method="get" target="_blank">
             <button type="submit" class="button">HOSPITALS</button>
-         </form>    
+         </form> 
+        </div>   
     </p>
     <hr>
     <p>
+        <div class="split right">
         Login for Oxygen cylinder dealers
         <form action="form1.html" method="get" target="_blank">
             <button type="submit" class="button">OXYGEN CYLINDER DEALERS</button>
         </form>
-    </p>
+    </div>
+    </p> -->
 </body>
+
 </html>
+
+
+<!-- <link rel="preconnect" href="https://fonts.gstatic.com"> -->
+<!-- <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet"> -->
+
+<!-- covi tracker html -->
+<!-- <section id="covid tracker">
+ <!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv=“Pragma” content=”no-cache”>
+<meta http-equiv=“Expires” content=”-1″>
+<meta http-equiv=“CACHE-CONTROL” content=”NO-CACHE”>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="stylesheet" href="tracker_style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>Covid Tracker</title>
+</head>
+<body> -->
+  
+<!-- <h1 class='section-heading'>COVID TRACKER</h1>
+<h2 class='section-subheading'>SEARCH COUNTRY NAME</h2>
+<div class="section-description">
+  <p class="section-subheading">
+    <form id="query-form">
+      <div>
+        <label for="ingredients"> 
+          <div class="country">Country :</div></label><input class="textfield" id="ingredients" type="text" name="ingredients" placeholder="e.g.INDIA" onChange="sanitizeInputs()" />
+      </div>
+      
+      <div class="button">
+        <br />
+        <input class="button" type="button" value="Reset" id="resetButton" onClick="this.form.reset();resetResults()" />
+        <input class="button" type="submit" value="Search ..." id="searchButton" />
+      </div>
+    </form>
+  </p>
+
+<div class="section-subheading" id="search-results-heading"></div>
+<div class="results-div" id="results"></div>
+</body>
+
+<!-- JQuery Scripts -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<!-- Our codes -->
+<script src="tracker_app.js"></script>
+
+</html>
+</section> -->

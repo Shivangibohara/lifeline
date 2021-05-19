@@ -25,7 +25,7 @@
         border-radius: 4px;
         box-sizing: border-box;
     }
-    input[type=email], select {
+    #hospname {
         width: 100%;
         padding: 12px 20px;
         margin: 8px 0;
@@ -62,26 +62,50 @@
     }
 </style>
 <body>
+    
     <h1>OXYGEN CYLINDER DEALERS</h1>
     <div>
-    <form action="backend.php">
+    <form action="o.php" method="POST">
         <label for="name">Name</label>
         
-            <input type="text" name="MyName" id="name" placeholder="Dealer name...">
+            <select name="OName" id="OName">
+                <option value="M/S PARAMOUNT SURGICAL">M/S PARAMOUNT SURGICAL</option>
+                <option value="HIMI SURGICAL AND ALLIED PRODUCTS">HIMI SURGICAL AND ALLIED PRODUCTS</option>
+                <option value="TRIVENI INDUSTRIAL GASES">TRIVENI INDUSTRIAL GASES</option>
+                <option value="CARE AND CARE SERVICES PVT LTD">CARE AND CARE SERVICES PVT LTD</option>
+                <option value="IMPERIAL GASES LTD">IMPERIAL GASES LTD</option>
+                <option value="TANDON SURGICAL">TANDON SURGICAL</option>
+                <option value="SIDDHANT ENTERPRISES ">SIDDHANT ENTERPRISES</option>
+                
+            </select>
         
         <br>
         <label for="need">Oxygen cylinder available(in next 1 hour)</label>
         
-            <input type="number" name="MyNeed" id="need" placeholder="Available...">
+        
+            <input type="number" name="Available" id="Need" placeholder="Available...">
     
         <br>
-        <label for="email">Email</label>
+        <label for="Name">Hospital in which you are suppplying this quantity</label>
         
-            <input type="email" name="MyEmail" id="email" placeholder="Official email...">
+           <select name="Name" id="Hospname" placeholder="select hospital">
+               <option value="select hospital...">select hopital...</option>
+               <option value="KAMLA NEHRU MEMORIAL HOSPITAL">KAMLA NEHRU MEMORIAL HOSPITAL</option>
+               <option value="SWAROOP RANI NEHRU HOSPITAL">SWAROOP RANI NEHRU HOSPITAL</option>
+               <option value="DUFFERIN HOSPITAL">DUFFERIN HOSPITAL</option>
+               <option value="MOTILAL NEHRU HOSPITAL">MOTILAL NEHRU HOSPITAL</option>
+               <option value="NAZRETH HOSPITAL">NAZRETH HOSPITAL</option>
+               <option value="TEJ BAHADUR SAPRU HOSPITAL">TEJ BAHADUR SAPRU HOSPITAL</option>
+               <option value="CENTRAL HOSPITAL">CENTRAL HOSPITAL</option>
+               <option value="ALKA HOSPITAL">ALKA HOSPITAL</option>
+               <option value="BHOLA HOSPITAL">BHOLA HOSPITAL</option>
+               <option value="CITY HOSPITAL">CITY HOSPITAL</option>
+           </select>
+            
         
         <br>
         
-            <input type="submit" value="Submit Now">
+            <input type="submit" name="submit" value="Submit Now">
         
     </form>
     </div>
