@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -94,7 +97,44 @@
         <br>
         
             <input type="submit" name="submit" value="Submit Now">
+
+
+            <?php
+        if(isset($_POST['count'])){
+            if(!($_SESSION['count'])){
+                $_SESSION['count'] = 1;
+            }else{
+                $count = $_SESSION['count'] + 1;
+                $_SESSION['count'] = $count;
+            }
+        }
         
+        ?>
+            
+            
+             <!-- function phpVarsToJs($vars) -->
+            
+             <!-- <script>
+                
+            //     var count = 0;
+            //     $(document).ready(function(){
+            //     $("form#Submit").submit(function(){
+            //        count++;
+            //       });
+            //        }); -->
+                   
+                   
+             
+            <!-- </script> -->
+            <!-- 
+        
+            
+            // if(<script>document.writeln(count);</script>==1)
+            // {
+            //     $c=0;
+            // } -->
+            
+         
     </form>
     </div>
 </body>

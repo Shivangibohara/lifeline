@@ -1,4 +1,5 @@
 <?php 
+session_start();
 $servername = "localhost";
 $username = "root";
 $password= "";
@@ -15,6 +16,9 @@ if(isset($_POST['submit'])){
 $Name = $_POST['Name'];
 $Need = $_POST['Need'];
 $Email = $_POST['Email'];
+$_SESSION['Need']=$Need;
+$_SESSION['count']=$count;
+
 
 
 $sql="INSERT INTO `hospital`(`Name`, `Need`, `Email`) VALUES ('$Name',$Need,'$Email')";
@@ -24,8 +28,8 @@ $sql="INSERT INTO `hospital`(`Name`, `Need`, `Email`) VALUES ('$Name',$Need,'$Em
 
 
 if ($conn->query($sql) == true){
-    echo "Success! Your entry has been submitted successfully"
-;
+    echo "Success! Your entry has been submitted successfully";
+
 } else {
   echo "ERROR: $sql <br> $conn->error";
 }
@@ -53,33 +57,81 @@ if ($conn->query($sql) == true){
   //     echo "Email sending failed...";
   // }
   // }
-  //  if($Name=="KAMLA NEHRU MEMORIAL HOSPITAL"){
+  // if($Name=="KAMLA NEHRU MEMORIAL HOSPITAL"){
   //   $to_email = "shahikaju73@gmail.com";
   //   $subject = "Simple Email Test via PHP";
-  //   $body = "requirement of ".$Need." oxygen cylinder in ".$Name;
+  //    $body = "requirement of ".$Need." oxygen cylinder in ".$Name;
   //   $headers = "From: lifelinewebsite03@gmail.com";
+    
+  //   if($Need>0){
+      
+  //       $to_email = "muskanpatel272002@gmail.com";
+  //       $subject = "Simple Email Test via PHP";
+  //        $body = "requirement of ".$Need." oxygen cylinder in ".$Name;
+  //       $headers = "From: lifelinewebsite03@gmail.com";}
+        
+  //   }
+    
+//   $sql ="UPDATE hospital INNER JOIN dealer ON hospital.Name=dealer.Name SET hospital.Need = hospital .Need-dealer.Available";
+//  if( mysqli_query($conn, $sql)){
+//    echo "done";
+ 
+    // if($Need<$c)
+   
   // if (mail($to_email, $subject, $body, $headers)) {
   //     echo "Email successfully sent to $to_email...";
   // } else {
   //     echo "Email sending failed...";
   // }
   
-mysqli_close($conn);
+echo "session started";
+
+
+if($count ==1){
+  $c=0;
+}
+if($Name=="KAMLA NEHRU MEMORIAL HOSPITAL"){
+  $c = $c + $Need;
+  $to_email = "nikki.shiv2402@gmail.com";
+  $subject = "Simple Email Test via PHP";
+   $body = "requirement of ".$c." oxygen cylinder in ".$Name;
+    $headers = "From: lifelinewebsite03@gmail.com";
+    if (mail($to_email, $subject, $body, $headers)) {
+          echo "Email successfully sent to $to_email...";
+       } else {
+           echo "Email sending failed...";}
+
+  }
+  
+  
+//   if($Need>0){
+//   if($Name=="KAMLA NEHRU MEMORIAL HOSPITAL"){
+//     $to_email = "muskanpatel272002@gmail.com";
+//     $subject = "Simple Email Test via PHP";
+//      $body = "requirement of ".$Need." oxygen cylinder in ".$Name;
+//     $headers = "From: lifelinewebsite03@gmail.com";
+//     if (mail($to_email, $subject, $body, $headers)) {
+//       echo "Email successfully sent to $to_email...";
+//    } else {
+//        echo "Email sending failed...";}
+    
+// }
+// }
   
   
 
-//   else if($name=="Swaroop rani nehru hospital"){
-//     echo "Email has been send to nearest oxygen cylinders dealers...";
-//   }
-//   else if($name=="Dufferin hospital"){
-//     echo "Email has been send to nearest oxygen cylinders dealers...";
-//   }
-//   else if($name=="Nazreth hospital"){
-//     echo "Email has been send to nearest oxygen cylinders dealers...";
-//   }
+// //   else if($name=="Swaroop rani nehru hospital"){
+// //     echo "Email has been send to nearest oxygen cylinders dealers...";
+// //   }
+// //   else if($name=="Dufferin hospital"){
+// //     echo "Email has been send to nearest oxygen cylinders dealers...";
+// //   }
+// //   else if($name=="Nazreth hospital"){
+// //     echo "Email has been send to nearest oxygen cylinders dealers...";
+// //   }
 //   else{
 //     echo "Email has been sent...";
 //   }
 // }
-
+mysqli_close($conn);
 ?>
