@@ -17,121 +17,174 @@ $Name = $_POST['Name'];
 $Need = $_POST['Need'];
 $Email = $_POST['Email'];
 $_SESSION['Need']=$Need;
-$_SESSION['count']=$count;
 
 
 
-$sql="INSERT INTO `hospital`(`Name`, `Need`, `Email`) VALUES ('$Name',$Need,'$Email')";
-
-//$sql="INSERT INTO requirement VALUES ('ggh','5','a@a.com');";
 
 
+ if($Name=="KAMLA NEHRU MEMORIAL HOSPITAL"){
+$c = "SELECT Name FROM hospital WHERE Name = 'KAMLA NEHRU MEMORIAL HOSPITAL'";
+ $result = mysqli_query($conn,$c);
+if(mysqli_num_rows($result) == 0) {
+  $ins = "INSERT INTO `hospital`(`Name`, `Need`, `Email`) VALUES ('$Name',$Need,'$Email')";
+  if ($conn->query($ins) == true){
+    echo "";
+  }
+else {
+  echo "ERROR: $ins <br> $conn->error";
+}
+}
+ 
 
-if ($conn->query($sql) == true){
-    echo "Success! Your entry has been submitted successfully";
+else {
+  $sql = "UPDATE hospital SET hospital.Need = hospital.Need + $Need WHERE Name = 'KAMLA NEHRU MEMORIAL HOSPITAL'";
+  mysqli_query($conn,$sql);
+    
+  
+ }
+}
+
+if($Name=="SWAROOP RANI NEHRU HOSPITAL"){
+ $d = "SELECT Name FROM hospital WHERE Name = 'SWAROOP RANI NEHRU HOSPITAL'";
+ $result2 = mysqli_query($conn,$d);
+if(mysqli_num_rows($result2) == 0) {
+  $ins2 = "INSERT INTO `hospital`(`Name`, `Need`, `Email`) VALUES ('$Name',$Need,'$Email')";
+  if ($conn->query($ins2) == true){
+    echo "";
 
 } else {
-  echo "ERROR: $sql <br> $conn->error";
+  echo "ERROR: $ins2 <br> $conn->error";
 }
 }
 
-
-
-  // $o1="Paramount Surgical";
-  // $o2="Himi Surgical";
-  // $o3="Trivini Industrial Gases";
-  // $to="nikki.shiv@gmail.com";
-  // $subject="requirement";
-  // $text="there is requirement of 2 oxygen cylinders in one hour";
-  // mail($to,$subject,$text);
-  
-  
-  // if($name=="Motilal nehru hospital"){
-  //   $to_email = "muskanpatel072002@gmail.com";
-  //   $subject = "Simple Email Test via PHP";
-  //   $body = "Hi, This is test email send by PHP Script";
-  //   $headers = "From: muskanpatel272002@gmail.com";
-  // if (mail($to_email, $subject, $body, $headers)) {
-  //     echo "Email successfully sent to $to_email...";
-  // } else {
-  //     echo "Email sending failed...";
-  // }
-  // }
-  // if($Name=="KAMLA NEHRU MEMORIAL HOSPITAL"){
-  //   $to_email = "shahikaju73@gmail.com";
-  //   $subject = "Simple Email Test via PHP";
-  //    $body = "requirement of ".$Need." oxygen cylinder in ".$Name;
-  //   $headers = "From: lifelinewebsite03@gmail.com";
+ else {
+  $sql2 = "UPDATE hospital SET hospital.Need = hospital.Need + $Need WHERE Name = 'SWAROOP RANI NEHRU HOSPITAL'";
+  mysqli_query($conn,$sql2);
     
-  //   if($Need>0){
-      
-  //       $to_email = "muskanpatel272002@gmail.com";
-  //       $subject = "Simple Email Test via PHP";
-  //        $body = "requirement of ".$Need." oxygen cylinder in ".$Name;
-  //       $headers = "From: lifelinewebsite03@gmail.com";}
-        
-  //   }
-    
-//   $sql ="UPDATE hospital INNER JOIN dealer ON hospital.Name=dealer.Name SET hospital.Need = hospital .Need-dealer.Available";
-//  if( mysqli_query($conn, $sql)){
-//    echo "done";
+}
+}
+if($Name=="DUFFERIN HOSPITAL"){
+ $d = "SELECT Name FROM hospital WHERE Name = 'DUFFERIN HOSPITAL'";
+ $result2 = mysqli_query($conn,$d);
+if(mysqli_num_rows($result2) == 0) {
+  $ins2 = "INSERT INTO `hospital`(`Name`, `Need`, `Email`) VALUES ('$Name',$Need,'$Email')";
+  if ($conn->query($ins2) == true){
+    echo "";
+
+} else {
+  echo "ERROR: $ins2 <br> $conn->error";
+}
+}
+
+ else {
+  $sql2 = "UPDATE hospital SET hospital.Need = hospital.Need + $Need WHERE Name = 'DUFFERIN HOSPITAL'";
+  mysqli_query($conn,$sql2);
+}
+}
+if($Name=="MOTILAL NEHRU HOSPITAL"){
+  $d = "SELECT Name FROM hospital WHERE Name = 'MOTILAL NEHRU HOSPITAL'";
+  $result2 = mysqli_query($conn,$d);
+ if(mysqli_num_rows($result2) == 0) {
+   $ins2 = "INSERT INTO `hospital`(`Name`, `Need`, `Email`) VALUES ('$Name',$Need,'$Email')";
+   if ($conn->query($ins2) == true){
+     echo "";
  
-    // if($Need<$c)
-   
-  // if (mail($to_email, $subject, $body, $headers)) {
-  //     echo "Email successfully sent to $to_email...";
-  // } else {
-  //     echo "Email sending failed...";
-  // }
-  
-echo "session started";
+ } else {
+   echo "ERROR: $ins2 <br> $conn->error";
+ }
+ }
+ 
+  else {
+   $sql2 = "UPDATE hospital SET hospital.Need = hospital.Need + $Need WHERE Name = 'MOTILAL NEHRU HOSPITAL'";
+   mysqli_query($conn,$sql2);
+ }
+ }
 
+if($Name=="NAZRETH HOSPITAL"){
+ $d = "SELECT Name FROM hospital WHERE Name = 'NAZRETH HOSPITAL'";
+ $result2 = mysqli_query($conn,$d);
+if(mysqli_num_rows($result2) == 0) {
+  $ins2 = "INSERT INTO `hospital`(`Name`, `Need`, `Email`) VALUES ('$Name',$Need,'$Email')";
+  if ($conn->query($ins2) == true){
+    echo "";
 
-if($count ==1){
-  $c=0;
+} else {
+  echo "ERROR: $ins2 <br> $conn->error";
 }
+}
+
+ else {
+  $sql2 = "UPDATE hospital SET hospital.Need = hospital.Need + $Need WHERE Name = 'NAZRETH HOSPITAL'";
+  mysqli_query($conn,$sql2);
+}
+}
+}
+
+
+
+
+// code for email
+
 if($Name=="KAMLA NEHRU MEMORIAL HOSPITAL"){
-  $c = $c + $Need;
+  
   $to_email = "nikki.shiv2402@gmail.com";
-  $subject = "Simple Email Test via PHP";
-   $body = "requirement of ".$c." oxygen cylinder in ".$Name;
+  $subject = "REQUIREMENT!!!!";
+   $body = "Requirement of ".$Need." oxygen cylinder in ".$Name;
     $headers = "From: lifelinewebsite03@gmail.com";
     if (mail($to_email, $subject, $body, $headers)) {
-          echo "Email successfully sent to $to_email...";
+          echo "Success! Your entry has been submitted successfully";
        } else {
            echo "Email sending failed...";}
 
   }
+  if($Name=="SWAROOP RANI NEHRU HOSPITAL"){
   
+    $to_email = "nikki.shiv2402@gmail.com";
+    $subject = "REQUIREMENT!!!!";
+     $body = "Requirement of ".$Need." oxygen cylinder in ".$Name;
+      $headers = "From: lifelinewebsite03@gmail.com";
+      if (mail($to_email, $subject, $body, $headers)) {
+            echo "Success! Your entry has been submitted successfully";
+         } else {
+             echo "Email sending failed...";}
   
-//   if($Need>0){
-//   if($Name=="KAMLA NEHRU MEMORIAL HOSPITAL"){
-//     $to_email = "muskanpatel272002@gmail.com";
-//     $subject = "Simple Email Test via PHP";
-//      $body = "requirement of ".$Need." oxygen cylinder in ".$Name;
-//     $headers = "From: lifelinewebsite03@gmail.com";
-//     if (mail($to_email, $subject, $body, $headers)) {
-//       echo "Email successfully sent to $to_email...";
-//    } else {
-//        echo "Email sending failed...";}
-    
-// }
-// }
+    }
+  if($Name=="DUFFERIN HOSPITAL"){
   
+    $to_email = "nikki.shiv2402@gmail.com";
+    $subject = "REQUIREMENT!!!!";
+     $body = "Requirement of ".$Need." oxygen cylinder in ".$Name;
+      $headers = "From: lifelinewebsite03@gmail.com";
+      if (mail($to_email, $subject, $body, $headers)) {
+            echo "Success! Your entry has been submitted successfully";
+         } else {
+             echo "Email sending failed...";}
   
-
-// //   else if($name=="Swaroop rani nehru hospital"){
-// //     echo "Email has been send to nearest oxygen cylinders dealers...";
-// //   }
-// //   else if($name=="Dufferin hospital"){
-// //     echo "Email has been send to nearest oxygen cylinders dealers...";
-// //   }
-// //   else if($name=="Nazreth hospital"){
-// //     echo "Email has been send to nearest oxygen cylinders dealers...";
-// //   }
-//   else{
-//     echo "Email has been sent...";
-//   }
-// }
+    }
+  if($Name =="MOTILAL NEHRU HOSPITAL"){
+  
+    $to_email = "mail@gmail.com";
+    $subject = "REQUIREMENT!!!!";
+     $body = "Requirement of ".$Need." oxygen cylinder in ".$Name;
+      $headers = "From: lifelinewebsite03@gmail.com";
+      if (mail($to_email, $subject, $body, $headers)) {
+            echo "Success! Your entry has been submitted successfully";
+         } else {
+             echo "Email sending failed...";}
+  
+    }
+  if($Name=="NAZRETH HOSPITAL"){
+  
+    $to_email = "mail1@gmail.com";
+    $subject = "REQUIREMENT!!!!";
+     $body = "Requirement of ".$Need." oxygen cylinder in ".$Name;
+      $headers = "From: lifelinewebsite03@gmail.com";
+      if (mail($to_email, $subject, $body, $headers)) {
+            echo "Success! Your entry has been submitted successfully";
+         } else {
+             echo "Email sending failed...";}
+  
+    }
+  
 mysqli_close($conn);
 ?>
