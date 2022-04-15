@@ -11,6 +11,6 @@ The main aim of our website is to work as an intermediate between hospitals and 
 Team Name: SSKM_Coders
 
 * [Shivangi Bohara](https://github.com/Shivangibohara)
-* [Shubham Kashyap](https://github.com/shubhamkashyap1720)
+* [Shubham Kashyap](https://github.com/admirerr)
 * [Kajal Shahi](https://github.com/shahikaju7)
 * [Muskan Patel](https://github.com/muskan272002)
